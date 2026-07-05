@@ -55,5 +55,14 @@ $('toU').addEventListener('change', convert);
 $('swap').onclick = () => {
   const a = $('fromU').value; $('fromU').value = $('toU').value; $('toU').value = a;
   $('fromVal').value = $('toVal').value || $('fromVal').value; convert();
+  const s = $('swap'); s.classList.remove('spin'); void s.offsetWidth; s.classList.add('spin');
 };
+// click the result to copy it
+$('toVal').addEventListener('click', () => {
+  const v = $('toVal').value;
+  if (navigator.clipboard) navigator.clipboard.writeText(v);
+  if (window.UI) UI.toast('Result copied · ' + v, 'success');
+});
+$('toVal').style.cursor = 'pointer';
+$('toVal').title = 'Click to copy';
 loadUnits();

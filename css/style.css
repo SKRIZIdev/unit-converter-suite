@@ -30,3 +30,18 @@ nav a:hover,nav a.active{color:var(--accent)}
 .prose{color:var(--muted)} .prose p{margin-bottom:12px}
 .foot{text-align:center;color:var(--muted);padding:28px;font-size:.85rem;border-top:1px solid var(--line)}
 @media(max-width:560px){.conv{flex-direction:column}.ref-grid{grid-template-columns:1fr}.title{font-size:1.6rem}}
+
+/* ---- enhancements: animations ---- */
+@keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes spin180{from{transform:rotate(0)}to{transform:rotate(180deg)}}
+.title,.tabs,.card,.eq,.ref-grid{opacity:0;animation:riseIn .55s cubic-bezier(.2,.8,.3,1) both}
+.tabs{animation-delay:.06s}.card{animation-delay:.12s}.eq{animation-delay:.2s}
+.tabs button{transition:transform .12s,background .2s}
+.tabs button:hover{transform:translateY(-2px)}
+.swap.spin{animation:spin180 .4s ease}
+.side input{transition:box-shadow .2s}
+.side input:focus{box-shadow:0 0 0 3px rgba(167,139,250,.16)}
+#toVal:hover{border-color:var(--accent)}
+.ref{opacity:0;animation:riseIn .5s ease both}
+.ref:nth-child(2){animation-delay:.08s}.ref:nth-child(3){animation-delay:.16s}.ref:nth-child(4){animation-delay:.24s}
+.ref li{transition:color .15s}.ref li:hover{color:var(--txt)}
