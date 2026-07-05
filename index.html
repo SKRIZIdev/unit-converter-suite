@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Converter Suite</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html">🔁 Convertly</a>
+  <nav>
+    <a href="index.html" class="active">Convert</a>
+    <a href="reference.html">Reference</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main class="wrap">
+  <h1 class="title">Unit Converter</h1>
+  <div class="tabs" id="tabs"></div>
+  <section class="card conv">
+    <div class="side">
+      <input id="fromVal" type="number" value="1">
+      <select id="fromU"></select>
+    </div>
+    <button class="swap" id="swap" title="Swap">⇅</button>
+    <div class="side">
+      <input id="toVal" type="number" readonly>
+      <select id="toU"></select>
+    </div>
+  </section>
+  <p class="eq" id="eq"></p>
+</main>
+<footer class="foot">Convertly · SKRIZIdev</footer>
+<script src="js/convert.js"></script>
+</body>
+</html>
